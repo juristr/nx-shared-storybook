@@ -15,7 +15,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sharedstorybook/shared/ui-greeter": [
+        "libs/shared/ui-greeter/src/index.ts"
+      ],
+      "@sharedstorybook/shared/ui-datepicker": [
+        "libs/shared/ui-datepicker/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

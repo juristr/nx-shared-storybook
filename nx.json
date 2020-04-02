@@ -14,7 +14,13 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
       }
     }
   },
@@ -24,7 +30,27 @@
     },
     "demoapp-e2e": {
       "tags": [],
-      "implicitDependencies": ["demoapp"]
+      "implicitDependencies": [
+        "demoapp"
+      ]
+    },
+    "shared-ui-greeter": {
+      "tags": []
+    },
+    "shared-ui-greeter-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "shared-ui-greeter"
+      ]
+    },
+    "shared-ui-datepicker": {
+      "tags": []
+    },
+    "shared-ui-datepicker-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "shared-ui-datepicker"
+      ]
     }
   }
 }
