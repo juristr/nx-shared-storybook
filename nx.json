@@ -51,6 +51,9 @@
       "implicitDependencies": [
         "shared-ui-datepicker"
       ]
+    },
+    "shared-storybook": {
+      "tags": []
     }
   }
 }

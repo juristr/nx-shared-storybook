@@ -25,9 +25,7 @@
               "apps/demoapp/src/favicon.ico",
               "apps/demoapp/src/assets"
             ],
-            "styles": [
-              "apps/demoapp/src/styles.scss"
-            ],
+            "styles": ["apps/demoapp/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -85,10 +83,7 @@
               "apps/demoapp/tsconfig.app.json",
               "apps/demoapp/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demoapp/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/demoapp/**"]
           }
         },
         "test": {
@@ -123,13 +118,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/demoapp-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demoapp-e2e/**"
-            ]
+            "tsConfig": ["apps/demoapp-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demoapp-e2e/**"]
           }
         }
       }
@@ -147,10 +137,7 @@
               "libs/shared/ui-greeter/tsconfig.lib.json",
               "libs/shared/ui-greeter/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/ui-greeter/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-greeter/**"]
           }
         },
         "test": {
@@ -220,13 +207,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/shared-ui-greeter-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/shared-ui-greeter-e2e/**"
-            ]
+            "tsConfig": ["apps/shared-ui-greeter-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/shared-ui-greeter-e2e/**"]
           }
         }
       }
@@ -244,10 +226,7 @@
               "libs/shared/ui-datepicker/tsconfig.lib.json",
               "libs/shared/ui-datepicker/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/ui-datepicker/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-datepicker/**"]
           }
         },
         "test": {
@@ -317,14 +296,55 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/shared-ui-datepicker-e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": ["apps/shared-ui-datepicker-e2e/tsconfig.e2e.json"],
             "exclude": [
               "**/node_modules/**",
               "!apps/shared-ui-datepicker-e2e/**"
             ]
           }
+        }
+      }
+    },
+    "shared-storybook": {
+      "projectType": "library",
+      "root": "libs/shared/storybook",
+      "sourceRoot": "libs/shared/storybook/src",
+      "prefix": "sharedstorybook",
+      "architect": {
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/storybook/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/shared-storybook",
+            "config": {
+              "configFolder": "libs/shared/storybook/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

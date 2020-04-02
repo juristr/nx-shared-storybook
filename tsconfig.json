@@ -21,6 +21,9 @@
       ],
       "@sharedstorybook/shared/ui-datepicker": [
         "libs/shared/ui-datepicker/src/index.ts"
+      ],
+      "@sharedstorybook/shared/storybook": [
+        "libs/shared/storybook/src/index.ts"
       ]
     }
   },
