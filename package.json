@@ -49,6 +49,7 @@
     "@angular/compiler-cli": "9.1.0",
     "@angular/language-service": "9.1.0",
     "@babel/core": "7.8.3",
+    "@compodoc/compodoc": "^1.1.11",
     "@nrwl/cypress": "9.2.1",
     "@nrwl/jest": "9.2.1",
     "@nrwl/storybook": "^9.2.1",
