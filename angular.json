@@ -178,6 +178,42 @@
               "quiet": true
             }
           }
+        },
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc --tsconfig libs/shared/ui-greeter/tsconfig.lib.json --output docs/libs/shared/ui-greeter --exportFormat {args.exportFormat}"
+              }
+            ]
+          }
+        },
+        "storybook-docs": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx nx run shared-ui-greeter:compodoc --args='--exportFormat=json'"
+              },
+              {
+                "command": "npx nx run shared-ui-greeter:storybook"
+              }
+            ]
+          }
+        },
+        "build-storybook-docs": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx nx run shared-ui-greeter:compodoc --args='--exportFormat=json'"
+              },
+              {
+                "command": "npx nx run shared-ui-greeter:build-storybook"
+              }
+            ]
+          }
         }
       },
       "schematics": {
@@ -266,6 +302,42 @@
             "ci": {
               "quiet": true
             }
+          }
+        },
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc --tsconfig libs/shared/ui-datepicker/tsconfig.lib.json --output docs/libs/shared/ui-datepicker --exportFormat {args.exportFormat}"
+              }
+            ]
+          }
+        },
+        "storybook-docs": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx nx run shared-ui-datepicker:compodoc --args='--exportFormat=json'"
+              },
+              {
+                "command": "npx nx run shared-ui-datepicker:storybook"
+              }
+            ]
+          }
+        },
+        "build-storybook-docs": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx nx run shared-ui-datepicker:compodoc --args='--exportFormat=json'"
+              },
+              {
+                "command": "npx nx run shared-ui-datepicker:build-storybook"
+              }
+            ]
           }
         }
       },

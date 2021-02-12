@@ -1,9 +1,11 @@
 
 import { GreeterComponent } from './greeter.component';
+import { text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'GreeterComponent'
-}
+  title: 'GreeterComponent',
+  component: GreeterComponent
+};
 
 export const primary = () => ({
   moduleMetadata: {
@@ -11,5 +13,6 @@ export const primary = () => ({
   },
   component: GreeterComponent,
   props: {
+    name: text('name', 'The Doctor')
   }
-})
+});

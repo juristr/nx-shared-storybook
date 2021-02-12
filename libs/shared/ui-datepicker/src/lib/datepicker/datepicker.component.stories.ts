@@ -1,9 +1,10 @@
-
 import { DatepickerComponent } from './datepicker.component';
+import { text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'DatepickerComponent'
-}
+  title: 'DatepickerComponent',
+  component: DatepickerComponent
+};
 
 export const primary = () => ({
   moduleMetadata: {
@@ -11,5 +12,6 @@ export const primary = () => ({
   },
   component: DatepickerComponent,
   props: {
+    eventName: text('eventName', 'Easter')
   }
-})
+});
